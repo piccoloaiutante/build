@@ -149,3 +149,6 @@ test-ibm-aix61-ppc64-1:18822
 [iojs-build-rhel72-linuxonecc]
 test-linuxonecc-rhel72-s390x-1
 test-linuxonecc-rhel72-s390x-2
+
+[test-ubuntu1604_docker_alpine34]
+test-digitalocean-ubuntu1604_docker_alpine34-x64-1

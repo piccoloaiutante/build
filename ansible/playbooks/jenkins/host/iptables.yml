@@ -21,7 +21,8 @@
 
   tasks:
   - name: add hosts to firewall
-    when: not 'ansible_ssh_common_args' in hostvars[host]
+    when: not 'ansible_ssh_common_args' in hostvars[host] and
+          hostgroups[inventory_hostname] == hostvars[host].type
     iptables:
       table: filter
       chain: jnlp

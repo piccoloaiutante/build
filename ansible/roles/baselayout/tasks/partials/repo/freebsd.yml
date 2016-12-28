@@ -4,7 +4,7 @@
 # get regular instead of quarterly updates
 #
 
-- name: "repos : add package repos"
+- name: "repo : switch from quarterly to latest"
   lineinfile:
     dest: /etc/pkg/FreeBSD.conf
     regexp: '^(\s+)url\:'
@@ -13,5 +13,6 @@
 
 # if the schema definition is updated this is required for any following
 # `pkg` commands to work
-- name: "repos : update definition"
+- name: "repo : update definition"
   raw: pkg update -q
+  register: has_updated_package_repo

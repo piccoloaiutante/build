@@ -16,7 +16,8 @@ hosts:
 
     - joyent:
         debian8-x64-1: {ip: 72.2.114.102, alias: unencrypted}
-        smartos14-x64-1: {ip: 72.2.113.228, alias: backup}
+        smartos15-x64-1: {ip: 72.2.118.125, alias: backup}
+
 
     - rackspace:
         debian8-x64-1: {ip: 23.253.100.79, alias: gh-bot}
@@ -77,6 +78,8 @@ hosts:
         fedora22-x64-1: {ip: 45.55.139.194}
         fedora23-x64-1: {ip: 162.243.63.132}
         fedora24-x64-1: {ip: 104.236.112.180}
+        fedora25-x64-1: {ip: 159.203.101.158}
+        fedora25-x64-2: {ip: 159.203.126.232}
         freebsd10-x64-1: {ip: 162.243.204.248, user: freebsd}
         freebsd11-x64-1: {ip: 45.55.90.237, user: freebsd}
         freebsd11-x64-2: {ip: 107.170.28.213, user: freebsd}
@@ -193,10 +196,11 @@ hosts:
         williamkapke-debian8-arm_pi3-3: {ip: 192.168.2.82, user: pi}
         xgene-ubuntu1404-arm64-1: {ip: 192.168.2.1, user: ubuntu}
         xgene-ubuntu1404-arm64-2: {ip: 192.168.2.2, user: ubuntu}
-        
+
     - scaleway:
         debian7-arm_armv7-1: {ip: 212.47.234.107}
         debian7-arm_armv7-2: {ip: 212.47.245.242}
+        debian7-arm_armv7-3: {ip: 212.47.246.3}
 
     - softlayer:
         centos5-x64-1: {ip: 50.23.85.252}

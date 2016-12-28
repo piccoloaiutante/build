@@ -39,15 +39,35 @@
         - "{{ role_path }}/tasks/partials/repo/{{ os|stripversion }}.yml"
       skip: true
 
+- name: check for a recent enough ccache
+  when: os in ccache_no_binpkg
+  stat: path="{{ binary_dest }}"
+  register: has_ccache
+
+- name: check for a recent enough git
+  when: os in git_no_binpkg
+  stat: path="{{ binary_dest }}"
+  register: has_ccache
+
 - name: install packages
   package: name="{{ package }}" state=present
   loop_control:
     loop_var: package
-  with_flattened:
-  # ansible doesn't like empty lists
+  with_items:
+    # ansible doesn't like empty lists
     - "{{ packages[os]|default('[]') }}"
     - "{{ packages[os|stripversion]|default('[]') }}"
     - "{{ common_packages|default('[]') }}"
+
+#- name: update package alteratives
+#  when: os == debian7
+#  alterantives:
+#  loop_control:
+#    loop_var: gcc
+#  with_items:
+#    - gcc
+#    - g++
+#    - cc
 
 - name: remove fortune from login shells
   when: os|stripversion == 'freebsd'
@@ -57,12 +77,7 @@
     regexp: fortune freebsd
   loop_control:
     loop_var: login_item
-  with_items: [ ".login", ".profile" ]
-
-- name: check for ccache
-  when: os in ccache_no_binpkg
-  stat: path="{{ ccache_dest }}"
-  register: has_ccache
+  with_items: [ '.login', '.profile' ]
 
 - name: run ccache installer
   when: os in ccache_no_binpkg and not has_ccache.stat.exists

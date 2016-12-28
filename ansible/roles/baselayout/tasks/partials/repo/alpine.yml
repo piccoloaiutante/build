@@ -5,6 +5,7 @@
 #
 
 - name: "repos : add alpine edge package repos"
+  when: not has_added_package_repo
   lineinfile: dest=/etc/apk/repositories create=yes line="{{ item }}"
   with_items:
     - https://dl-3.alpinelinux.org/alpine/edge/main

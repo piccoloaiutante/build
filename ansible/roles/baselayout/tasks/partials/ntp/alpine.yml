@@ -5,7 +5,4 @@
 #
 
 - name: start ntpd
-  service:
-    name: "ntpd"
-    state: started
-    enabled: yes
+  service: name=ntpd state=started enabled=yes

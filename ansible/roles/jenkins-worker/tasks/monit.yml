@@ -19,7 +19,6 @@
     - files:
         - "{{ role_path }}/files/{{ os }}.monitrc"
         - "{{ role_path }}/files/{{ os|stripversion }}.monitrc"
-        - "{{ role_path }}/files/default.monitrc"
 
 - name: start monit on boot
   service: name=monit enabled=yes state=started

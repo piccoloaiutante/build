@@ -5,19 +5,30 @@
 #
 
 init: {
-  freebsd-sysinit: 'freebsd',
-  openrc: 'alpine',
+  centos:  ['centos5', 'centos6'],
+  debian:  ['debian7', 'ubuntu1204'],
+  freebsd: 'freebsd',
+  openrc:  'alpine',
   systemd: ['centos7', 'debian8', 'fedora', 'ubuntu1404', 'ubuntu1604',
             'ubuntu1610'],
-  sysvinit: ['centos5', 'centos6', 'debian7'],
-  svc: 'smartos',
+  svc:     'smartos',
   upstart: 'ubuntu12'
   }
 
 jenkins_init: {
-  freebsd-sysinit: {
+  centos: {
+    dest: '/etc/init.d/jenkins',
+    src: 'centos.initd.j2',
+    mode: '0755'
+    },
+  debian: {
+    dest: '/etc/init.d/jenkins',
+    src: 'sysvinit.initd.j2',
+    mode: '0755'
+    },
+  freebsd: {
     dest: '/usr/local/etc/rc.d/jenkins',
-    src: 'freebsd-sysinit.initd.j2',
+    src: 'freebsd.initd.j2',
     mode: '0755'
     },
   openrc: {
@@ -32,11 +43,6 @@ jenkins_init: {
   systemd: {
     dest: '/lib/systemd/system/jenkins.service',
     src: 'systemd.service.j2'
-    },
-  sysvinit: {
-    dest: '/etc/init.d/jenkins',
-    src: 'sysvinit.initd.j2',
-    mode: '0755'
     },
   upstart: {
     dest: '/etc/init/jenkins.conf',

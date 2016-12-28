@@ -12,6 +12,7 @@
 - name: update package database
   when: has_python.rc == 1
   raw: apk update -q
+  register: has_updated_package_repo
 
 - name: install python
   when: has_python.rc == 1

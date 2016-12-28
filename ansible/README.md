@@ -5,9 +5,8 @@
 
 ### Getting started
 
-1. Install Ansible 2.2.0 or newer: `pip install ansible` (not out yet)
-   **note**: if you're using homebrew you'll have to manage dependencies
-   such as `PyAML` yourself.
+1. Install Ansible 2.2.0 or newer: `pip install ansible`. **Note**: if you're
+   using homebrew you'll have to manage dependencies such as `PyAML` yourself.
 2. Read this document.
 3. Clone the node secrets repository (if you don't have access ask anyone
    in the [build group][1]).
@@ -137,12 +136,10 @@ Unsorted stuff of things we need to do/think about
       hosts (or set up a new jump host)
 - [ ] copy release (staging) keys to release machines
 - [ ] backup host: generate config, install rsnapshot
-- [x] scaleway: authorized_keys2 since first is overridden at boot
 - [ ] switch to slaveLog for all jenkins instances lacking stdout redirection
       (note: this depends on init type!)
 - [ ] add iptables-save-persistent to cron on ci hosts
 - [ ] [unencrypted host](https://git.io/v6H1z)
-- [x] make exceptions for jump hosts when adding to the CI iptables firewall
 - [ ] when creating additional jenkins labels based on `labels=` add os/arch
       as part of hte label (ref: rvagg long irc talk see 2016-08-29 logs)
 - [ ] follow up ansible upstream wrt hostname support for smartos/alpine
@@ -151,3 +148,6 @@ Unsorted stuff of things we need to do/think about
 - [ ] move all service-related stuff to handlers
 - [ ] find a nicer way of adding proxyhosts to iptables
 - [ ] add clang/clang++ symlinks for ccache
+- [ ] centos7 needs different ccache path
+- [ ] fedora 24 and 25 needs to either handle selinux or just disable it
+- [ ] fedora 24 and 25: ccache lives in /usr/lib64/ccache

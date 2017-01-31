@@ -47,7 +47,7 @@
 - name: check for a recent enough git
   when: os in git_no_binpkg
   stat: path="{{ binary_dest }}"
-  register: has_ccache
+  register: has_git
 
 - name: install packages
   package: name="{{ package }}" state=present
@@ -84,7 +84,7 @@
   include: ccache.yml
   static: false
   vars:
-    - version: 3.3.2
+    - version: 3.3.3
 
 - name: set up ntp
   include: "{{ ntp_include }}"

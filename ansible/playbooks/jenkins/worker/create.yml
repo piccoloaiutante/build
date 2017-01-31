@@ -6,6 +6,7 @@
 
 - hosts:
   - test
+  - release
   - "!test-joyent-freebsd10-x64-2"
   - "!test-rackspace-freebsd10-x64-1"
 

@@ -20,6 +20,7 @@
     line: ::1 localhost.localdomain localhost
 
 - name: prepare installing tap2junit
+  when: type != "release"
   include: "{{ pip_include }}"
   loop_control:
     loop_var: pip_include

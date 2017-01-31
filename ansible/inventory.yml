@@ -15,9 +15,8 @@ hosts:
         ubuntu1604-x64-1: {ip: 162.243.173.250, alias: www}
 
     - joyent:
-        debian8-x64-1: {ip: 72.2.114.102, alias: unencrypted}
         smartos15-x64-1: {ip: 72.2.118.125, alias: backup}
-
+        ubuntu1604-x64-1: {ip: 72.2.119.21, alias: unencrypted}
 
     - rackspace:
         debian8-x64-1: {ip: 23.253.100.79, alias: gh-bot}
@@ -35,6 +34,7 @@ hosts:
     - joyent:
         smartos13-x64-1: {ip: 72.2.114.225}
         smartos14-x64-1: {ip: 72.2.113.193}
+        smartos15-x64-1: {ip: 165.225.131.14}
 
     - requireio:
         andineck-debian7-arm_pi1p-1: {ip: 192.168.2.41, user: pi}

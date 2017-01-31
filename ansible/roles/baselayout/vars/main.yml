@@ -22,7 +22,6 @@ common_packages: [
   'automake',
   'bash',
   'libtool',
-  'subversion',
   'sudo',
   ]
 

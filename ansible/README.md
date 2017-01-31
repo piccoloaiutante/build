@@ -157,6 +157,8 @@ Unsorted stuff of things we need to do/think about
 - [ ] adding scl stuff on centos5/6 is broken
 - [ ] verify that /usr/local/bin works as ccache install path
 - [x] remove subversion since v8 tests uses git nowadays
-
+- [ ] assign 192/256mb ram to the jenkins instances that requires it:
+      - aix
+      - ....
 [callback]: plugins/inventory/nodejs_yaml.py
 
